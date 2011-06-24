@@ -27,14 +27,17 @@
       });
     }
     Wall.prototype.buildRow = function(idx) {
-      var brick, col, fw, h, os, w, _ref, _ref2, _results;
+      var brick, col, fw, h, os, tint, w, _ref, _ref2, _results;
       this.bricks[idx] = [];
       _ref = [parseInt(this.width / this.cols), parseInt(this.height / this.rows)], w = _ref[0], h = _ref[1];
       fw = 0;
       _results = [];
       for (col = 0, _ref2 = this.cols; 0 <= _ref2 ? col <= _ref2 : col >= _ref2; 0 <= _ref2 ? col++ : col--) {
+        tint = parseInt(200 + (Math.random() * 55)).toString(16);
+        console.log(tint);
         os = col === 0 ? w / (idx % 2 + 1) : w;
         brick = $("<div class='brick'></div>").width(os).height(h).css({
+          backgroundColor: "#" + tint + "5b35",
           left: fw,
           top: h * idx
         });
