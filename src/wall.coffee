@@ -15,7 +15,6 @@ class Wall
     fw = 0
     for col in [0 .. @cols]
       tint = parseInt(200+(Math.random()*55)).toString 16
-      console.log tint
       os = if col == 0 then w/(idx%2+1) else w
       brick = $("<div class='brick'></div>")
         .width(os)
